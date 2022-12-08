@@ -26,7 +26,7 @@ const NavBar = () => {
           <div class="collapse navbar-collapse" id="navbarColor03">
             <ul class="navbar-nav me-auto">
               <li class="nav-item">
-                <Link to={"/"} class="nav-link active">
+                <Link to={"/home"} class="nav-link active">
                   Home
                   <span class="visually-hidden">(current)</span>
                 </Link>

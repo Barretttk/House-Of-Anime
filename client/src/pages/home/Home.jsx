@@ -1,15 +1,17 @@
 import React from 'react'
-import '../App.scss';
-import Registration from '../components/login/Registration';
+import Carousel from '../../components/carousel/Carousel';
+import './style.scss';
+
 
 const Home = () => {
   return (
     <div>
-
-        <Registration 
-        />
+      <div className="carousel">
+        <Carousel/>
+        
+      </div>
     </div>
-  )
+  );
 }
 
 export default Home

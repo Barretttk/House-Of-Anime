@@ -1,15 +1,15 @@
 import React from 'react';
 import 'bootstrap';
 import cyborg from './cyborg.scss';
-import NavBar from './components/NavBar';
+import NavBar from './components/nav/NavBar';
 import { Navigate, Routes, Route, Link } from "react-router-dom";
 import About from './pages/about/About';
 import Anime from './pages/anime/Anime';
 import Home from './pages/home/Home';
 import Manga from './pages/manga/Manga';
-import Registration from './components/login/Registration';
-import Login from './components/login/Login';
-import Profile from './components/login/Profile';
+import Registration from './pages/reg/Reg';
+import Login from './pages/login/Login';
+import Profile from './pages/dashboard/Profile';
 
 
 const App = () => {
@@ -17,9 +17,10 @@ const App = () => {
 
     <div>
       <>
-        <NavBar 
-        />
+        <NavBar>
+            <Link to="/"> Home </Link>
 
+        </NavBar>
         <>
           <Routes>
             
