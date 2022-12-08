@@ -24,7 +24,7 @@ const App = () => {
         <>
           <Routes>
             
-            {/* <Route exact path="/" element= {<Navigate to="/home" replace />} /> */}
+            <Route exact path="/" element= {<Navigate to="/home" replace />} />
             <Route exact path="/home" element={<Home />} />
             <Route path="/anime" element={<Anime />} />
             <Route path="/manga" element={<Manga />} />

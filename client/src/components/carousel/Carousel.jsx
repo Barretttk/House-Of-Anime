@@ -1,41 +1,85 @@
 import React from "react";
 import "./style.scss";
+import { useState, useEffect } from "react";
+import all from "../../assets/images/carousel/anime.png";
+import baki from "../../assets/images/carousel/baki.jpg";
+import demon from "../../assets/images/carousel/demonslayer.jpg";
+import aeon from "../../assets/images/carousel/aeonflux.png";
+import bleach from "../../assets/images/carousel/bleach.jpg";
+import codeg from "../../assets/images/carousel/codeg.png";
+import death from "../../assets/images/carousel/deathnote.jpg";
+import devil from "../../assets/images/carousel/devilman.png";
+import naruto from "../../assets/images/carousel/naruto.jpg";
+import ninja from "../../assets/images/carousel/ninjascroll.png";
+import onepunch from "../../assets/images/carousel/onepunch.jpg";
+import yasuke from "../../assets/images/carousel/yasuke.png";
+import vamphd from "../../assets/images/carousel/vamphd.png";
+import story from "../../assets/images/carousel/story.jpg";
+
 
 const Carousel = () => {
+      const [index, setIndex] = useState(0);
+
+  const cards = [
+    { id: "1", image: aeon },
+    { id: "2", image: baki },
+    { id: "3", image: demon },
+    { id: "4", image: codeg },
+    { id: "5", image: bleach },
+    { id: "6", image: onepunch },
+    { id: "7", image: ninja },
+    { id: "8", image: naruto },
+    { id: "9", image: death },
+    { id: "10", image: all },
+    { id: "11", image: yasuke },
+
+    ];
+    
+    const mod = (n,m) => {
+        let result = n % m;
+
+    // Returns a positive value
+    return result >= 0 ? result : result + m;
+    };
+
+    useEffect(() =>{ 
+        setTimeout(() => {
+            setIndex((index + 1) % cards.length + 1);
+        }, 3000)
+    },[index]);
+
   return (
     <div>
+      <div className="title">Anime World</div>
+      <hr />
       <div className="carousel">
-        <img
-          className="card card--active"
-          src="https://img-9gag-fun.9cache.com/photo/aDgreo9_700bwp.webp"
-          alt=""
-        ></img>
-        <img
-          className="card card--left"
-          src="https://chasinganime.com/wp-content/uploads/2021/02/baki21-1024x576.jpg"
-          alt=""
-        ></img>
-        <img
-          className="card card--right"
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS58ZKuKpDCEOHqaKqEIC-T8tyOzAL4gZNuXg&usqp=CAU"
-          alt=""
-        ></img>
-        <img
-          className="card"
-          src="https://phando021.s.llnwi.net/public/upload/news/story_mul_image_1622563397_7.jpg"
-          alt=""
-        ></img>
-        <img
-          className="card"
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQztl-ilJPvBC6TetFYzMKxczPe3YF2m-FPmw&usqp=CAU"
-          alt=""
-        ></img>
-        <img
-          className="card"
-          src="https://www.fanbolt.com/storage/2021/12/demon-slayer-anime-800x500.jpg"
-          alt=""
-        ></img>
+        {cards.map((item, i) => {
+          const indexLeft = mod(index - 1, cards.length);
+          const indexRight = mod(index + 1, cards.length);
+
+          let className = "";
+
+          if (i === index) {
+            className = "card card--active";
+          } else if (i === indexRight) {
+            className = "card card--right";
+          } else if (i === indexLeft) {
+            className = "card card--left";
+          } else {
+            className = "card";
+          }
+          return (
+            <img
+              key={item.id}
+              src={item.image}
+              alt="pic"
+              className={className}
+            />
+          );
+        })}
       </div>
+      <hr />
+      <div className="body"></div>
     </div>
   );
 };
