@@ -63,7 +63,7 @@
     height: 100%;
     z-index: 99;
     padding: 17px 10px;
-    //transition: transform 200ms ease-in-out;
+    // transition: transform 200ms ease-in-out;
   }
   .right-side {
     display: flex;
@@ -103,24 +103,11 @@
       margin-left: 3em;
     }
   }
-
+  
 }
  
-
-// //Button
-// .btn {
-//   font-size: 21px;
-//   padding: 5px 20px;
-//   border: 0;
-//   background-color: #3498db;
-//   color: #fff;
-//   border-radius: 3px;
-//   transition: all 250ms ease-in-out;
-//   cursor: pointer;
-//   &:hover {
-//     background-color: #2386c8;
-//   }
-//   &:focus {
-//     outline: none;
-//   }
-// }
+.title{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}

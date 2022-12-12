@@ -1,8 +1,8 @@
 import React from "react";
 import "./style.scss";
 import { useState, useEffect } from "react";
-import all from "../../assets/images/carousel/anime.png";
-import baki from "../../assets/images/carousel/baki.jpg";
+import all from "../../../assets/images/carousel/anime.png";
+import baki from "../assets/images/carousel/baki.jpg";
 import demon from "../../assets/images/carousel/demonslayer.jpg";
 import aeon from "../../assets/images/carousel/aeonflux.png";
 import bleach from "../../assets/images/carousel/bleach.jpg";
@@ -21,7 +21,7 @@ const Carousel = () => {
       const [index, setIndex] = useState(0);
 
   const cards = [
-    { id: "1", image: aeon },
+    { id: "1", image: all },
     { id: "2", image: baki },
     { id: "3", image: demon },
     { id: "4", image: codeg },
@@ -30,8 +30,12 @@ const Carousel = () => {
     { id: "7", image: ninja },
     { id: "8", image: naruto },
     { id: "9", image: death },
-    { id: "10", image: all },
+    { id: "10", image: aeon },
     { id: "11", image: yasuke },
+    { id: "12", image: devil },
+    { id: "12", image: story },
+    { id: "12", image: vamphd, },
+
 
     ];
     
@@ -50,7 +54,7 @@ const Carousel = () => {
 
   return (
     <div>
-      <div className="title">Anime World</div>
+      
       <hr />
       <div className="carousel">
         {cards.map((item, i) => {
